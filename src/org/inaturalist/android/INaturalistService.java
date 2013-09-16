@@ -42,6 +42,8 @@ import android.util.Base64;
 import android.util.Log;
 
 public class INaturalistService extends IntentService {
+    private static final int GNP_PROJECT_ID = 800;
+    
     public static String TAG = "INaturalistService";
     public static String HOST = "https://www.inaturalist.org";
 //    public static String HOST = "http://10.0.2.2:3000";
@@ -55,6 +57,7 @@ public class INaturalistService extends IntentService {
     public static String ACTION_PASSIVE_SYNC = "passive_sync";
     public static String ACTION_SYNC = "sync";
     public static String ACTION_NEARBY = "nearby";
+    public static String ACTION_JOIN_PROJECT = "join_project";
     public static Integer SYNC_OBSERVATIONS_NOTIFICATION = 1;
     public static Integer SYNC_PHOTOS_NOTIFICATION = 2;
     public static Integer AUTH_NOTIFICATION = 3;
@@ -89,8 +92,10 @@ public class INaturalistService extends IntentService {
         try {
             if (action.equals(ACTION_NEARBY)) {
                 getNearbyObservations(intent);
-            } else {
+            } else if (action.equals(ACTION_SYNC)) {
                 syncObservations();
+            } else if (action.equals(ACTION_JOIN_PROJECT)) {
+                joinProject(GNP_PROJECT_ID);
             }
         } catch (AuthenticationException e) {
             if (!mPassive) {
@@ -104,6 +109,11 @@ public class INaturalistService extends IntentService {
         postPhotos();
 //        getUserObservations();
 //        Toast.makeText(getApplicationContext(), "Observations synced", Toast.LENGTH_SHORT);
+    }
+    
+    /* Joins the user to a specific project */
+    public void joinProject(int projectId) throws AuthenticationException {
+        post(String.format("%s/projects/%d/join", HOST, projectId), null);
     }
 
     private void postObservations() throws AuthenticationException {

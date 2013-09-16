@@ -371,6 +371,10 @@ public class INaturalistPrefsActivity extends Activity {
 			mPrefEditor.putString("login_type", mLoginType.toString());
 			mPrefEditor.commit();
 			toggle();
+			
+			// User logged-in successfully - now make him join the GNP project
+			Intent serviceIntent = new Intent(INaturalistService.ACTION_JOIN_PROJECT, null, getApplicationContext(), INaturalistService.class);
+			startService(serviceIntent);
 	    }
 
 	}
