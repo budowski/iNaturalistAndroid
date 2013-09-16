@@ -577,8 +577,18 @@ public class INaturalistService extends IntentService {
             ContentValues cv = observation.getContentValues();
             cv.put(Observation._SYNCED_AT, System.currentTimeMillis());
             getContentResolver().update(observation.getUri(), cv, null, null);
+            
+            // Add the observation as a GNP project observation
+            ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+            params.add(new BasicNameValuePair("project_observation[observation_id]", observation.id.toString()));
+            params.add(new BasicNameValuePair("project_observation[project_id]", String.valueOf(GNP_PROJECT_ID)));
+            post(HOST + "/project_observations", params);
+            
         } catch (JSONException e) {
             // Log.d(TAG, "JSONException: " + e.toString());
+        } catch (AuthenticationException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
     }
 
