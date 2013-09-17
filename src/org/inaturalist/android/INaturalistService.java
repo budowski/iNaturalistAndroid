@@ -253,7 +253,7 @@ public class INaturalistService extends IntentService {
         Double maxx = extras.getDouble("maxx");
         Double miny = extras.getDouble("miny");
         Double maxy = extras.getDouble("maxy");
-        String url = HOST + "/observations.json?";
+        String url = String.format("%s/observations/project/%d.json?", HOST, GNP_PROJECT_ID);
         url += "swlat="+miny;
         url += "&nelat="+maxy;
         url += "&swlng="+minx;
