@@ -98,4 +98,13 @@
     <string name="brief_description">Brief description...</string>
     <string name="unknown_species">Unknown species</string>
     <string name="no_description">No description</string>
+    
+    <string name="about_gnp_text">National Geographic is urging everyone to get outside to explore
+nature. Participants are asked to take and upload a photo of any
+species they come across with the goal of building a global snapshot
+of biodiversity. The tagged photos are aggregated for visitors to
+browse on greatnatureproject.org. IMPORTANT: If you want your animal
+photo included in our attempt to set a Guinness World Records title
+for Largest Online Photo Album of Animals, please use the tag
+"animal." Let\'s set a record!</string>
 </resources>
