@@ -51,12 +51,12 @@ public class MenuActivity extends ListActivity {
         map.put("description", getString(R.string.observations_description));
         MENU_ITEMS.add(map);
         
+        /*
         map = new HashMap<String,String>();
         map.put("title", getString(R.string.map));
         map.put("description", getString(R.string.map_description));
         MENU_ITEMS.add(map);
         
-        /*
         map = new HashMap<String,String>();
         map.put("title", getString(R.string.updates));
         map.put("description", getString(R.string.updates_description));
