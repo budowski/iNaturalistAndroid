@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -32,11 +33,19 @@ public class MenuActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        requestWindowFeature(Window.FEATURE_NO_TITLE); 
+        
         setContentView(R.layout.menu);
         
         MENU_ITEMS = new ArrayList<Map>();
         Map<String,String> map;
         
+        map = new HashMap<String,String>();
+        map.put("title", getString(R.string.add_your_photo));
+        map.put("description", getString(R.string.add_your_photo_description));
+        MENU_ITEMS.add(map);
+ 
         map = new HashMap<String,String>();
         map.put("title", getString(R.string.observations));
         map.put("description", getString(R.string.observations_description));
@@ -47,15 +56,23 @@ public class MenuActivity extends ListActivity {
         map.put("description", getString(R.string.map_description));
         MENU_ITEMS.add(map);
         
+        /*
         map = new HashMap<String,String>();
         map.put("title", getString(R.string.updates));
         map.put("description", getString(R.string.updates_description));
         MENU_ITEMS.add(map);
+        */
         
         map = new HashMap<String,String>();
         map.put("title", getString(R.string.settings));
         map.put("description", getString(R.string.settings_description));
         MENU_ITEMS.add(map);
+        
+        map = new HashMap<String,String>();
+        map.put("title", getString(R.string.about_gnp));
+        map.put("description", getString(R.string.about_gnp_description));
+        MENU_ITEMS.add(map);
+ 
         
         SimpleAdapter adapter = new SimpleAdapter(this, 
                 (List<? extends Map<String, ?>>) MENU_ITEMS, 
@@ -65,6 +82,8 @@ public class MenuActivity extends ListActivity {
         ListView lv = getListView();
         LinearLayout header = (LinearLayout) getLayoutInflater().inflate(R.layout.menu_header, lv, false);
         lv.addHeaderView(header, null, false);
+        LinearLayout footer = (LinearLayout) getLayoutInflater().inflate(R.layout.menu_footer, lv, false);
+        lv.addFooterView(footer, null, false);
         setListAdapter(adapter);
         
         if  (savedInstanceState != null) {
@@ -75,15 +94,8 @@ public class MenuActivity extends ListActivity {
         if (app == null) { app = (INaturalistApp) getApplicationContext(); }
         if (mHelper == null) { mHelper = new ActivityHelper(this);}
         
-        mAddObservationButton = (Button) findViewById(R.id.add_observation);
+        /*
         mTakePictureButton = (Button) findViewById(R.id.take_picture);
-        
-        mAddObservationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_INSERT, Observation.CONTENT_URI));
-            }
-        });
         
         mTakePictureButton.setOnClickListener(new View.OnClickListener() {           
             @Override
@@ -94,6 +106,7 @@ public class MenuActivity extends ListActivity {
                 startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
             }
         });
+        */
     }
     
     @Override
@@ -138,7 +151,13 @@ public class MenuActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         Map<String,String> item = (Map<String,String>) l.getItemAtPosition(position);
         String title = item.get("title");
-        if (title.equals(getString(R.string.observations))) {
+        if (title.equals(getString(R.string.add_your_photo))) {
+            mPhotoUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, new ContentValues());
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, mPhotoUri);
+            startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+                
+        } else if (title.equals(getString(R.string.observations))) {
             startActivity(new Intent(this, ObservationListActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
         } else if (title.equals(getString(R.string.map))) {
             startActivity(new Intent(this, INaturalistMapActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));

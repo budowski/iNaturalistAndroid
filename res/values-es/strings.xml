@@ -78,6 +78,10 @@
     <string name="view_in_browser">Ver en el navegador</string>
     <string name="view">Ver</string>
     
+    <string name="add_your_photo">Add Your Photo</string>
+    <string name="add_your_photo_description">Add your observation photo</string>
+    <string name="about_gnp">About the Great Nature Project</string>
+    <string name="about_gnp_description">About the Great Nature Project</string>
     <string name="add_observation">Añadir observación</string>
     <string name="take_picture">Tomar una foto</string>
     <string name="add_photo">Añadir foto</string>

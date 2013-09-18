@@ -56,6 +56,10 @@
     <string name="oh_no">Oh no! %1$s</string>
     <string name="need_to_login">You need to log in to view your feed.  Log in now?</string>
     
+    <string name="add_your_photo">Add Your Photo</string>
+    <string name="add_your_photo_description">Add your observation photo</string>
+    <string name="about_gnp">About the Great Nature Project</string>
+    <string name="about_gnp_description">About the Great Nature Project</string>
     <string name="observations">Observations</string>
     <string name="observations_description">Observations list</string>
     <string name="map">Map</string>
