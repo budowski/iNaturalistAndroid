@@ -4,7 +4,7 @@
  * Wraps JSONObject with simpler getters.  I'm sure there some smarter way to delegate calls than this...
  */
 
-package org.inaturalist.android;
+package org.inaturalist.gnp.android;
 
 import java.io.Serializable;
 import java.sql.Timestamp;

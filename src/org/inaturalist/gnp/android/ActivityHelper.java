@@ -1,4 +1,6 @@
-package org.inaturalist.android;
+package org.inaturalist.gnp.android;
+
+import org.inaturalist.android.R;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;

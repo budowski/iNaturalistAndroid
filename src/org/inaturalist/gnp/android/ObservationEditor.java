@@ -1,4 +1,4 @@
-package org.inaturalist.android;
+package org.inaturalist.gnp.android;
 
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 import org.apache.commons.lang3.StringUtils;
+import org.inaturalist.android.R;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;

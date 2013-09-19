@@ -2,7 +2,7 @@
  * Like a normal EditText except it has a DONE button.
  * http://stackoverflow.com/questions/5014219/multiline-edittext-with-done-softinput-action-label-on-2-3
  */
-package org.inaturalist.android;
+package org.inaturalist.gnp.android;
 
 import android.content.Context;
 import android.util.AttributeSet;

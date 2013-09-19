@@ -1,11 +1,11 @@
-package org.inaturalist.android;
+package org.inaturalist.gnp.android;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 import org.inaturalist.android.R;
-import org.inaturalist.android.INaturalistService.LoginType;
+import org.inaturalist.gnp.android.INaturalistService.LoginType;
 
 import android.app.Application;
 import android.app.Notification;

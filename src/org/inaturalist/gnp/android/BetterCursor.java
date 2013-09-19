@@ -4,7 +4,7 @@
  * Wraps Cursor with simpler getters
  */
 
-package org.inaturalist.android;
+package org.inaturalist.gnp.android;
 
 import java.io.Serializable;
 import java.sql.Timestamp;

@@ -1,7 +1,9 @@
-package org.inaturalist.android;
+package org.inaturalist.gnp.android;
 
 import java.util.ArrayList;
-import org.inaturalist.android.INaturalistService.LoginType;
+
+import org.inaturalist.android.R;
+import org.inaturalist.gnp.android.INaturalistService.LoginType;
 
 import com.facebook.Session;
 import com.facebook.SessionState;
@@ -109,7 +111,7 @@ public class INaturalistPrefsActivity extends Activity {
 //		try {
 //		    Log.d("KeyHash:", "ENTER");
 //		    PackageInfo info = getPackageManager().getPackageInfo(
-//		            "org.inaturalist.android", 
+//		            "org.inaturalist.gnp.android", 
 //		            PackageManager.GET_SIGNATURES);
 //		    for (Signature signature : info.signatures) {
 //		        MessageDigest md = MessageDigest.getInstance("SHA");

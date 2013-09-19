@@ -1,4 +1,4 @@
-package org.inaturalist.android;
+package org.inaturalist.gnp.android;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,6 +25,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.CoreProtocolPNames;
 import org.apache.http.util.EntityUtils;
+import org.inaturalist.android.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

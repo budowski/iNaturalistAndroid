@@ -1,4 +1,4 @@
-package org.inaturalist.android;
+package org.inaturalist.gnp.android;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteCursor;

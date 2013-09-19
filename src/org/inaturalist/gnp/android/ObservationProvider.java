@@ -1,4 +1,4 @@
-package org.inaturalist.android;
+package org.inaturalist.gnp.android;
 
 import java.util.ArrayList;
 
