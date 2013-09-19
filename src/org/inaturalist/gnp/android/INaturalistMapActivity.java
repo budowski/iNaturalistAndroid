@@ -1,6 +1,5 @@
 package org.inaturalist.gnp.android;
 import java.util.HashMap;
-import org.inaturalist.android.R;
 
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;

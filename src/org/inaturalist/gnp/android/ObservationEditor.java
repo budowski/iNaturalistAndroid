@@ -9,7 +9,6 @@ import java.util.Date;
 import java.util.HashMap;
 
 import org.apache.commons.lang3.StringUtils;
-import org.inaturalist.android.R;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;

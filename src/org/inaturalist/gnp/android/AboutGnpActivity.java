@@ -5,8 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.inaturalist.android.R;
-
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.ContentValues;

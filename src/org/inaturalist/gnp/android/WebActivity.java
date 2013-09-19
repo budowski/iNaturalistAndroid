@@ -2,7 +2,6 @@ package org.inaturalist.gnp.android;
 
 import java.util.HashMap;
 
-import org.inaturalist.android.R;
 import org.inaturalist.gnp.android.INaturalistService.LoginType;
 
 import android.app.Activity;

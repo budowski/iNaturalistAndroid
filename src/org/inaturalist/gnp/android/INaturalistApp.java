@@ -4,7 +4,6 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-import org.inaturalist.android.R;
 import org.inaturalist.gnp.android.INaturalistService.LoginType;
 
 import android.app.Application;

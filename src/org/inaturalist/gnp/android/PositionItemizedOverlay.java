@@ -1,7 +1,5 @@
 package org.inaturalist.gnp.android;
 
-import org.inaturalist.android.R;
-
 import android.content.Context;
 import android.location.Location;
 import android.util.Log;

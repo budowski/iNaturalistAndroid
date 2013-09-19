@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.apache.commons.lang3.StringUtils;
-import org.inaturalist.android.R;
 
 import android.app.ListActivity;
 import android.content.ContentUris;
