@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="acc">Acc</string>
-    <string name="app_name">Great Nature Project</string>
+    <string name="app_name">GreatNature</string>
     <string name="google_login">Login with Google</string>
     <string name="email_address">Email Address</string>
     <string name="observations_menu_add">Add</string>
@@ -56,17 +56,17 @@
     <string name="oh_no">Oh no! %1$s</string>
     <string name="need_to_login">You need to log in to view your feed.  Log in now?</string>
     
-    <string name="add_your_photo">Add Your Photo</string>
+    <string name="add_your_photo">ADD PHOTO</string>
     <string name="add_your_photo_description">Add your observation photo</string>
-    <string name="about_gnp">About the Great Nature Project</string>
+    <string name="about_gnp">ABOUT GNP</string>
     <string name="about_gnp_description">About the Great Nature Project</string>
-    <string name="observations">Observations</string>
+    <string name="observations">OBSERVATIONS</string>
     <string name="observations_description">Observations list</string>
     <string name="map">Map</string>
     <string name="map_description">Observations map</string>
     <string name="updates">Updates feed</string>
     <string name="updates_description">Updates from people you follow on iNat</string>
-    <string name="settings">Settings</string>
+    <string name="settings">SETTINGS</string>
     <string name="settings_description">Sign in/out</string>
     <string name="processing">Processing...</string>
     

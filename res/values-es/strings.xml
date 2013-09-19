@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="acc">Prec</string>
-    <string name="app_name">Great Nature Project</string>
+    <string name="app_name">GreatNature</string>
     <string name="google_login">  Iniciar sesión con Google</string>
     <string name="email_address">Dirección de correo electrónico</string>
     <string name="observations_menu_add">Añadir</string>
@@ -78,9 +78,9 @@
     <string name="view_in_browser">Ver en el navegador</string>
     <string name="view">Ver</string>
     
-    <string name="add_your_photo">Add Your Photo</string>
+    <string name="add_your_photo">ADD PHOTO</string>
     <string name="add_your_photo_description">Add your observation photo</string>
-    <string name="about_gnp">About the Great Nature Project</string>
+    <string name="about_gnp">ABOUT GNP</string>
     <string name="about_gnp_description">About the Great Nature Project</string>
     <string name="add_observation">Añadir observación</string>
     <string name="take_picture">Tomar una foto</string>

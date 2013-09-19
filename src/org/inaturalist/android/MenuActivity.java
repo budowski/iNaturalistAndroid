@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import android.app.Activity;
 import android.app.ListActivity;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -14,13 +15,16 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
-public class MenuActivity extends ListActivity {
+public class MenuActivity extends Activity implements OnItemClickListener {
     public static String TAG = "MenuActivity";
     List<Map> MENU_ITEMS;
     static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 1;
@@ -79,12 +83,9 @@ public class MenuActivity extends ListActivity {
                 R.layout.menu_item,
                 new String[] {"title"},
                 new int[] {R.id.title});
-        ListView lv = getListView();
-        LinearLayout header = (LinearLayout) getLayoutInflater().inflate(R.layout.menu_header, lv, false);
-        lv.addHeaderView(header, null, false);
-        LinearLayout footer = (LinearLayout) getLayoutInflater().inflate(R.layout.menu_footer, lv, false);
-        lv.addFooterView(footer, null, false);
-        setListAdapter(adapter);
+        GridView gv = (GridView) findViewById(R.id.menu_buttons);
+        gv.setAdapter(adapter);
+        gv.setOnItemClickListener(this);
         
         if  (savedInstanceState != null) {
             String photoUri = savedInstanceState.getString("mFileUri");
@@ -148,8 +149,8 @@ public class MenuActivity extends ListActivity {
     }
     
     @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        Map<String,String> item = (Map<String,String>) l.getItemAtPosition(position);
+    public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+        Map<String,String> item = (Map<String,String>) parent.getItemAtPosition(position);
         String title = item.get("title");
         if (title.equals(getString(R.string.add_your_photo))) {
             mPhotoUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, new ContentValues());
@@ -169,4 +170,5 @@ public class MenuActivity extends ListActivity {
             startActivity(new Intent(this, AboutGnpActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
         }
     }
+
 }
